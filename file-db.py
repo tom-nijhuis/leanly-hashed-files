@@ -178,7 +178,7 @@ class FileDB(dict):
                 
             return {
                 "path": file_path,
-                "parent": os.path.dirname(file_path),
+                "folder": os.path.dirname(file_path),
                 "hash": hash,
                 "hash_type": hash_type,  # Remark the type of hash used for this file
                 "size": stat.st_size,
@@ -191,7 +191,7 @@ class FileDB(dict):
             logger.error(f"Error processing file `{file_path}`: {e}")
             return {
                 "path": file_path,
-                "parent": os.path.dirname(file_path),
+                "folder": os.path.dirname(file_path),
                 "hash": None,
                 "hash_type": None,
                 "size": None,
